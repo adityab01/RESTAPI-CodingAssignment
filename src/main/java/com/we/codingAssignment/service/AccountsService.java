@@ -14,10 +14,7 @@ public class AccountsService {
 	@Autowired
 	private AccountsRepository accountRepository;
 
-	
 	public Page<Account> fetchAllAccounts(Pageable pageable) {
-		
-		System.out.println("\n Inside AccountsService: fetchAllAccounts");
 		return accountRepository.findAll(pageable);
 	}
 

@@ -33,7 +33,6 @@ public class TransactionServiceController {
 			@PathVariable(name = "pageNumber") Integer pageNumber,
 			@PathVariable(name = "size") Integer size) throws JsonParseException, JsonMappingException, IOException {
 
-		System.out.println("\n Received API request");
 		Pageable pageable = PageRequest.of(pageNumber, size);
 		Page<Transaction> accountsPage = this.transactionsService.fetchTransactionsByActID(accountId, pageable);
 		

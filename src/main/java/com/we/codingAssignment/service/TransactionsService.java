@@ -14,10 +14,7 @@ public class TransactionsService {
 	@Autowired
 	private TransactionsRepository transactionRepository;
 
-	
 	public Page<Transaction> fetchTransactionsByActID(Integer accountId, Pageable pageable) {
-		
-		System.out.println("\n Inside Transaction Service: fetchTransactionsByActID");
 		return transactionRepository.getTransactionsByAccountId(accountId, pageable);
 	}
 

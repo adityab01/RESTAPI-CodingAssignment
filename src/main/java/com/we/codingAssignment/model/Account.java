@@ -1,6 +1,6 @@
 package com.we.codingAssignment.model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Account {
 	
 	@Column(name ="BALANCE_DATE") 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	private Timestamp balanceDate;
+	private Date balanceDate;
 	
 	@Column(name="CURRENCY")
 	private String currency;
@@ -61,13 +61,7 @@ public class Account {
 		this.accountType = accountType;
 	}
 
-	public Timestamp getBalanceDate() {
-		return balanceDate;
-	}
-
-	public void setBalanceDate(Timestamp balanceDate) {
-		this.balanceDate = balanceDate;
-	}
+	
 
 	public String getCurrency() {
 		return currency;
@@ -88,9 +82,16 @@ public class Account {
 	public Account() {
 			
 	}
-	
-	
-	public Account(int accountNumber, String accountName, String accountType, Timestamp balanceDate, String currency,
+
+	public Date getBalanceDate() {
+		return balanceDate;
+	}
+
+	public void setBalanceDate(Date balanceDate) {
+		this.balanceDate = balanceDate;
+	}
+
+	public Account(int accountNumber, String accountName, String accountType, Date balanceDate, String currency,
 			double openingBalance) {
 		super();
 		this.accountNumber = accountNumber;
@@ -101,6 +102,7 @@ public class Account {
 		this.openingBalance = openingBalance;
 	}
 	
+
 	
 	
 }
